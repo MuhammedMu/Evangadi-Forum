@@ -5,11 +5,11 @@
 
 body{
      /* font-family: "Titillium Web", sans-serif; */
-     font-family: "Lato", sans-serif;
+     font-family: 'Montserrat', sans-serif;
      background-image: url("./images/bg-svg-f.svg");
      background-position: center;
      background-repeat: no-repeat;
-     background-size: 100%;
+     /* background-size: 100%; */
 }
 
 .signin-button{
@@ -38,7 +38,7 @@ background-color: #fe8402;
 
 .login-section .all{
 /* width: 50%; */
-height: 515px;
+height: 535px;
 }
 
 .login-button{

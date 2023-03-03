@@ -3,21 +3,18 @@ import React from "react";
 function LandingPage() {
   return (
     <div>
-      
-
       {/* Login Section  */}
       <section className="login-section">
         <div className="container">
-                  <div className="row">
-                      
+          <div className="row">
             {/* First Part */}
             <div className="col-sm-9 col-md-7 col-lg-6 mx-auto">
-              <div className="card border-0 shadow rounded-3 my-5">
+              <div className="card border-0 shadow rounded-3 my-4">
                 <div className="card-body p-4 p-sm-5 all">
                   <h5 className="card-title text-center fw-light fs-5 first-join fw-bold">
                     Join the network
                   </h5>
-                  <h6 className="card-title text-center mb-5 fw-light  ">
+                  <h6 className="card-title text-center mb-3 fw-light  ">
                     Already have an account? Sign in
                   </h6>
                   <form>
@@ -33,7 +30,7 @@ function LandingPage() {
                     <div className="login-flex">
                       <div className="form-floating mb-3">
                         <input
-                          type="password"
+                          type="email"
                           className="form-control"
                           id="floatingPassword"
                           placeholder="Password"
@@ -42,13 +39,22 @@ function LandingPage() {
                       </div>
                       <div className="form-floating mb-3 second">
                         <input
-                          type="password"
+                          type="email"
                           className="form-control"
                           id="floatingPassword"
                           placeholder="Password"
                         />
                         <label htmlFor="floatingPassword">Last Name</label>
                       </div>
+                    </div>
+                    <div className="form-floating mb-3">
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="floatingInput"
+                        placeholder="name@example.com"
+                      />
+                      <label htmlFor="floatingInput">User Name</label>
                     </div>
                     <div className="form-floating mb-3">
                       <input

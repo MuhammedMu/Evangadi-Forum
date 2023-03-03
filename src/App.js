@@ -3,6 +3,7 @@ import "./Resources/style.css"
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Header from './Components/Header/Header';
+import AskQuestion from './Components/AskQuestion/AskQuestion';
 
 function App() {
   return (
@@ -15,6 +16,15 @@ function App() {
               <>
                 <Header />
                 <LandingPage />
+              </>
+            }
+          />
+          <Route
+            path="/ask"
+            element={
+              <>
+                <Header />
+                <AskQuestion />
               </>
             }
           />

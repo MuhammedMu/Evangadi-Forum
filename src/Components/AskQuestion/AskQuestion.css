@@ -1,0 +1,35 @@
+
+
+.discription{
+	width: 480px;
+	margin-top: 50px;
+	/* border: 1px solid black; */
+	
+}
+
+.discription h5{
+	font-weight: bold;
+	text-align: center;
+}
+
+.discription ul{
+	font-size: 14px;
+}
+
+
+
+
+.ask{
+	/* border: 1px solid black; */
+	height: 350px;
+	text-align: center;
+	border-radius: 15px;
+	box-shadow: 0px 0px 5px 0px #989292;
+	background-color: white;
+	padding-top: 30px;
+	margin: 10px auto;
+}
+
+#title{
+	height: 20px;
+}
