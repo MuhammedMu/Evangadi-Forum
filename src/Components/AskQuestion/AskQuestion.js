@@ -19,7 +19,7 @@ function AskQuestion() {
         </div>
       </section>
       {/* Ask section  */}
-      <section className="ask container row col-8">
+      <section className="ask container row col-8 mb-5">
         <div className>
           <h5 className="title">Ask a public question</h5>
           <h6>Go to question page</h6>
@@ -45,7 +45,7 @@ function AskQuestion() {
             </div>
             <div className="d-grid">
               <button
-                className="btn btn-primary btn-login post-question-button col-3 my-3"
+                className="btn btn-primary btn-login post-question-button col-sm-2 col-md-4 my-3"
                 type="submit"
               >
                 Post your question

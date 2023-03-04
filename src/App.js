@@ -4,6 +4,9 @@ import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import LandingPage from './Components/LandingPage/LandingPage';
 import Header from './Components/Header/Header';
 import AskQuestion from './Components/AskQuestion/AskQuestion';
+import Footer from './Components/Footer/Footer';
+import Home from './Components/Home/Home';
+import Answer from './Components/Answer/Answer';
 
 function App() {
   return (
@@ -28,7 +31,28 @@ function App() {
               </>
             }
           />
+
+          <Route
+            path="/home"
+            element={
+              <>
+                <Header />
+                <Home />
+              </>
+            }
+          />
+
+          <Route
+            path="/answer"
+            element={
+              <>
+                <Header />
+                <Answer />
+              </>
+            }
+          />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

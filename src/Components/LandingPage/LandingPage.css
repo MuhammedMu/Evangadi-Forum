@@ -1,0 +1,41 @@
+.landing{
+    background-image: url("../../Resources/images/bg-svg-f.svg");
+     background-position: inherit;
+     background-repeat: no-repeat;
+     
+     background-size: 100%;
+     height: 100%;
+     margin-top: 0;
+}
+
+
+
+.submit-button{
+    background-color: #fe8402;
+    border: none;
+    text-align: center;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.create-link{
+    color: #fe8402; 
+    border: none;
+    background-color: none;
+    cursor: pointer;
+} 
+
+.signinLink{
+    color: #fe8402;
+    cursor: pointer;
+}
+
+.about-link{
+    color: #fe8402;
+    cursor: pointer;
+}
+
+
+.hide{
+    display: none;
+}

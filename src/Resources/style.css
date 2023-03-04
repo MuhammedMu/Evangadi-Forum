@@ -6,9 +6,9 @@
 body{
      /* font-family: "Titillium Web", sans-serif; */
      font-family: 'Montserrat', sans-serif;
-     background-image: url("./images/bg-svg-f.svg");
+     /* background-image: url("./images/bg-svg-f.svg");
      background-position: center;
-     background-repeat: no-repeat;
+     background-repeat: no-repeat; */
      /* background-size: 100%; */
 }
 
@@ -50,7 +50,7 @@ height: 535px;
 }
 
 .evangadi-title{
-    font-size: 38px;
+    font-size: 32px;
     color: #4b456f;
     line-height: 52px;
     font-weight: 600;

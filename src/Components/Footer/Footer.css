@@ -1,0 +1,13 @@
+.footer-logos{
+    /* border: 1px solid white; */
+    
+}
+
+.logos{
+    /* border: 1px solid white; */
+    width: 230px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 25%;
+}
+
