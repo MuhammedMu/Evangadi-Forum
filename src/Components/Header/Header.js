@@ -1,6 +1,38 @@
 import React from 'react'
+import { useDataGlobaly } from "../StateProvider/StateProvider";
+import { signOut } from "@firebase/auth";
+
+import { auth } from "../../firebase";
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate()
+  
+  const Signout = () => {
+    // user
+    auth().signOut().then((response) => {
+      if (response) {
+        alert("sign out completely");
+        navigate("/");
+      }
+    }).catch((err) => {
+      console.log(err.message)
+      alert("error signout")
+    })
+    
+  };
+
+  
+
+  const toLoginPage = (e) => {
+    var element = document.getElementById("login");
+    element.classList.add("hide");
+
+    var element = document.getElementById("create");
+    element.classList.remove("hide");
+  };
+
+
   return (
     <div>
       <section>
@@ -36,15 +68,23 @@ function Header() {
                   </a>
                 </li>
                 <li className="nav-item">
+                  {/* <button
+                    className="btn btn-outline-success signin-button"
+                    type="submit"
+                    onClick={toLoginPage}
+                  >
+                    SIGN IN
+                  </button> */}
+
                   <button
                     className="btn btn-outline-success signin-button"
                     type="submit"
+                    onClick={Signout}
                   >
-                    SIGN IN
+                    Logout
                   </button>
                 </li>
               </ul>
-              
             </div>
           </div>
         </nav>

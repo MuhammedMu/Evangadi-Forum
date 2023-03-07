@@ -1,7 +1,30 @@
 import React from "react";
 import "./LandingPage.css"
+import { useState } from 'react';
+import {auth} from "../../firebase"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
+import { useDataGlobaly } from "../StateProvider/StateProvider";
+
 
 function LandingPage() {
+// States for controling users data 
+  const [email,setEmail]=useState()
+  const [password, setPassword] = useState();
+  const [firstName, setFirst] = useState();
+  const [lastName, setLast] = useState();
+  const [userName, setUserName] = useState();
+
+  console.log(`email ${email}`)
+  console.log(`passwword ${password}`);
+  console.log(`first name ${firstName}`);
+  console.log(`last name ${lastName}`);
+  console.log(`user name ${userName}`);
+
+  const navigate = useNavigate();
+
+
+  // Class toogle for signin section and login sectio n
 
   const toLoginPage = (e) => {
    var element = document.getElementById("login");
@@ -20,6 +43,34 @@ function LandingPage() {
   }
   
 
+  const register = (e) => {
+    e.preventDefault();
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((response) => {
+      if (response) {
+      navigate("/home")
+    }
+    }).catch(() => {
+      alert("Error creating Account")
+    })
+
+  }
+
+  const login = (e) => {
+    
+    e.preventDefault()
+
+    signInWithEmailAndPassword(auth, email, password).then((response) => {
+      if (response) {
+        navigate("/home");
+      }
+    }).catch(() => {
+      alert("error signin")
+
+    })
+  }
+
 
   return (
     <div className="landing">
@@ -28,7 +79,10 @@ function LandingPage() {
         <div className="container">
           <div className="row">
             {/* First Part create account */}
-            <div className="col-sm-9 col-md-7 col-lg-6 mx-auto " id="create">
+            <div
+              className="col-sm-9 col-md-7 col-lg-6 mx-auto hide"
+              id="create"
+            >
               <div className="card border-0 shadow rounded-3 my-4">
                 <div className="card-body p-4 p-sm-5 all">
                   <h5 className="card-title text-center fw-light fs-5 first-join fw-bold">
@@ -49,25 +103,31 @@ function LandingPage() {
                         className="form-control"
                         id="floatingInput"
                         placeholder="name@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                       />
                       <label htmlFor="floatingInput">Email address</label>
                     </div>
                     <div className="login-flex">
                       <div className="form-floating mb-3">
                         <input
-                          type="email"
+                          type="text"
                           className="form-control"
                           id="floatingPassword"
                           placeholder="Password"
+                          value={firstName}
+                          onChange={(e) => setFirst(e.target.value)}
                         />
                         <label htmlFor="floatingPassword">First Name</label>
                       </div>
                       <div className="form-floating mb-3 second">
                         <input
-                          type="email"
+                          type="text"
                           className="form-control"
                           id="floatingPassword"
                           placeholder="Password"
+                          value={lastName}
+                          onChange={(e) => setLast(e.target.value)}
                         />
                         <label htmlFor="floatingPassword">Last Name</label>
                       </div>
@@ -78,6 +138,8 @@ function LandingPage() {
                         className="form-control"
                         id="floatingInput"
                         placeholder="name@example.com"
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
                       />
                       <label htmlFor="floatingInput">User Name</label>
                     </div>
@@ -87,6 +149,8 @@ function LandingPage() {
                         className="form-control"
                         id="floatingPassword"
                         placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                       />
                       <label htmlFor="floatingPassword">Password</label>
                     </div>
@@ -94,6 +158,7 @@ function LandingPage() {
                       <button
                         className="btn btn-primary btn-login login-button col-md-12"
                         type="submit"
+                        onClick={register}
                       >
                         Agree and join
                       </button>
@@ -101,7 +166,7 @@ function LandingPage() {
                     <br />
                     <div className="form-check mb-4 text-center">
                       <label className="forget-password ">
-                        I agree to the{" "}
+                        I agree to the
                         <a href="https://www.evangadi.com/legal/privacy/">
                           privacy policy
                         </a>
@@ -124,7 +189,7 @@ function LandingPage() {
             </div>
 
             {/* First part login  */}
-            <div className="col-sm-9 col-md-7 col-lg-6 mx-auto hide" id="login">
+            <div className="col-sm-9 col-md-7 col-lg-6 mx-auto " id="login">
               <div className="card border-0 shadow rounded-3 my-4">
                 <div className="card-body p-4 p-sm-5 all">
                   <h5 className="card-title text-center fw-light fs-5 first-join fw-bold mb-4 mt-5 pt-2">
@@ -161,6 +226,7 @@ function LandingPage() {
                       <button
                         className="btn btn-primary btn-login submit-button col-md-4"
                         type="submit"
+                        onClick={login}
                       >
                         Submit
                       </button>

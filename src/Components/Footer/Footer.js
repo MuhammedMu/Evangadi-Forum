@@ -16,9 +16,9 @@ function Footer() {
               </a>
               <div className="facebook"></div>
               <div className="logos mb-4">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-youtube"></i>
+                <i className="fab fa-facebook-f"></i>
+                <i className="fa-brands fa-instagram"></i>
+                <i className="fa-brands fa-youtube"></i>
               </div>
             </div>
           </div>
@@ -26,13 +26,13 @@ function Footer() {
             <ul>
               <h5>Useful Link</h5>
               <li>
-                <a href>How it works</a>
+                <a href="/">How it works</a>
               </li>
               <li>
-                <a href>Term of Service</a>
+                <a href="/">Term of Service</a>
               </li>
               <li>
-                <a href>Privacy policy</a>
+                <a href="/">Privacy policy</a>
               </li>
             </ul>
           </div>
@@ -40,13 +40,13 @@ function Footer() {
             <ul>
               <h5>Contact Info</h5>
               <li>
-                <a href>Evangadi Networks</a>
+                <a href='/'>Evangadi Networks</a>
               </li>
               <li>
-                <a href>support@evangadi.com</a>
+                <a href='/'>support@evangadi.com</a>
               </li>
               <li>
-                <a href>+1-202-386-2702</a>
+                <a href='/'>+1-202-386-2702</a>
               </li>
             </ul>
           </div>
